@@ -7,33 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <h1> Feedback Form</h1>
     <form id="feedback-form">
         <div class="field">
-            <label for="user"> User Name</label> <br>
-            <input type="text" id="name" data-tooltip="Your full name." placeholder="Name">
+            <label for="username"> User Name</label> <br>
+            <input type="text" id="username" data-tooltip="Show your full name!" placeholder="Name">
         </div> <br>
 
         <div class="field">
             <label for="email"> Email </label> <br>
-            <input type="email" id="email" name="email" data-tooltip="Show email." placeholder="name@gmail.com">
+            <input type="email" id="email" name="email" data-tooltip="Show your email!" placeholder="name@gmail.com">
         </div> <br>
 
         <div class="field">
             <label for="comments">Comments</label> <br>
-            <textarea id="comments" name="comments" rows="5" data-tooltip="Share your thoughts" placeholder="Your Comments..."></textarea>
+            <textarea id="comments" name="comments" rows="5" data-tooltip="Share your thoughts!" placeholder="Your Comments..."></textarea>
             <div class="muted" id="char-row">
                 <span id="char-count">0</span> characters 
             </div>
         </div> <br>
 
         <button type="submit" id="submit-btn">Submit</button>
+
     </form>
+
+    <div id="tooltip" class="tooltip"></div>
 
     <section>
         <h2>Submitted Feedback</h2>
         <div id="feedback-display" class="stack"></div>
     </section>
+
     <script src="cp_1.js"></script>
 </body>
 </html>
