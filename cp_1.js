@@ -22,7 +22,7 @@ form.addEventListener ("mouseover", event => {
   if (message) {
     tooltip.textContent = message;
     tooltip.style.display = "block";
-    tooltip.style.left = (event.clientX + 2) +"px";
+    tooltip.style.left = (event.clientX) +"px";
     tooltip.style.top = (event.clientY - 9 )+"px";
   }
 });
@@ -46,7 +46,7 @@ form.addEventListener("submit", (event) => {
     alert("All fields are required!");
     return;
   }
-  
+
 // Dynamically append valid feedback entries 
 
 const entry = document.createElement("div");
@@ -65,6 +65,10 @@ document.querySelector("#feedback-form").addEventListener("input", (event) => {
 
 // Prevent form related trigger events
 
+ form.addEventListener ("click" , (event) => {
+  event.stopPropagation();
+  console.log("stopping triggers")
+ });
 
 
 
