@@ -15,7 +15,7 @@ commentsInput.addEventListener("input", () => {
   charCount.textContent = String(commentsInput.value.length);
 });
 
-// Displaying tooltips on mouseover and hiding using mouseout
+// Displaytooltips on mouseover and hide using mouseout
 
 form.addEventListener ("mouseover", event => {
   const message = event.target.getAttribute("data-tooltip");
@@ -35,19 +35,36 @@ form.addEventListener ("mouseout", event => {
 });
 
 
-//Prevent Submission 
-
- const username = usernameInput.value.trim();
-  const email = emailInput.value.trim();
-  const comments = commentsInput.value.trim();
+//Prevent Submission of Empty Fields
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  const username = usernameInput.value.trim();
+  const email = emailInput.value.trim();
+  const comments = commentsInput.value.trim();
   if (!username || !email || !comments) {
     alert("All fields are required!");
     return;
   }
+  
+// Dynamically append valid feedback entries 
+
+const entry = document.createElement("div");
+entry.textContent = `${username} (${email}): ${comments}`;
+feedbackDisplay.appendChild(entry);
+
 });
 
-// Dynamically appending valid feednack entries 
+// Use event bubbling and delegation to manage events
+
+document.querySelector("#feedback-form").addEventListener("input", (event) => {
+  if (event.target.matches("input,textarea")) {
+    console.log("Interacting with:", event.target.id);
+  }
+});
+
+// Prevent form related trigger events
+
+
+
 
