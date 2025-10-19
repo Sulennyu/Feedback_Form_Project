@@ -39,9 +39,11 @@ form.addEventListener ("mouseout", event => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+
   const username = usernameInput.value.trim();
   const email = emailInput.value.trim();
   const comments = commentsInput.value.trim();
+
   if (!username || !email || !comments) {
     alert("All fields are required!");
     return;

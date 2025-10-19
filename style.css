@@ -4,7 +4,7 @@ body {
     color: #FFF;
     margin: 20px;
     min-height: 100vh;
-};
+}
 
 form {
     padding:15px;
@@ -52,5 +52,18 @@ button:hover {
     border-radius: 4px;
     pointer-events: none;
     z-index: 1000;
-};
+}
 
+section div {
+  background-color: #fff;   
+  padding: 20px;               
+  margin-bottom: 8px;        
+  border-radius: 5px;         
+  border: 1px solid #ccc;     
+  font-size: 0.95em;         
+  box-sizing: border-box; 
+  color: #000000;  
+  max-width: 75%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
